@@ -1,7 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import List from "./List.js";
+import React from "react";
 
 function App() {
+  let [array, setArray] = React.useState([
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "bue",
+  ]);
+  let yourMom = "I'm hungry";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,9 +26,18 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn Paul's mom and {yourMom}
         </a>
       </header>
+      <List itemList={array} newProp={"Not a string"} />
+      <button
+        onClick={() => {
+          // alert("You clocked meh");
+          setArray(["NYE", "Valentines", "St. Paddy's"]);
+        }}
+      >
+        Clock Meh
+      </button>
     </div>
   );
 }
